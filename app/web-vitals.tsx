@@ -1,18 +1,24 @@
 "use client"
 
 import { useEffect } from "react"
-import { onCLS, onFID, onLCP, onFCP, onTTFB } from "web-vitals"
+
+// Define types for the metrics
+type WebVitalsMetric = {
+  name: string
+  value: number
+  id: string
+}
 
 export function WebVitals() {
   useEffect(() => {
     // Function to send metrics to your analytics
-    const sendMetric = ({ name, value, id }) => {
+    const sendMetric = ({ name, value, id }: WebVitalsMetric) => {
       // Replace with your analytics service
       console.log(`Web Vital: ${name}`, { value, id })
 
       // Example: Send to Google Analytics
-      if (typeof window.gtag === "function") {
-        window.gtag("event", name, {
+      if (typeof window !== "undefined" && typeof (window as any).gtag === "function") {
+        ;(window as any).gtag("event", name, {
           value: Math.round(name === "CLS" ? value * 1000 : value),
           metric_id: id,
           metric_value: value,
@@ -21,14 +27,27 @@ export function WebVitals() {
       }
     }
 
-    // Monitor Core Web Vitals
-    onCLS(sendMetric)
-    onFID(sendMetric)
-    onLCP(sendMetric)
+    // We'll load web-vitals dynamically to avoid the module loading issue
+    const loadWebVitals = async () => {
+      try {
+        // Dynamic import of web-vitals
+        const webVitals = await import("web-vitals")
 
-    // Additional metrics
-    onFCP(sendMetric)
-    onTTFB(sendMetric)
+        // Monitor Core Web Vitals
+        webVitals.onCLS(sendMetric)
+        webVitals.onFID(sendMetric)
+        webVitals.onLCP(sendMetric)
+
+        // Additional metrics
+        webVitals.onFCP(sendMetric)
+        webVitals.onTTFB(sendMetric)
+      } catch (error) {
+        console.warn("Failed to load web-vitals:", error)
+      }
+    }
+
+    // Load web-vitals
+    loadWebVitals()
   }, [])
 
   return null

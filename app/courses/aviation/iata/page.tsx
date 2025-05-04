@@ -4,7 +4,7 @@ import IATAClientPage from "./IATAClientPage"
 export const metadata: Metadata = {
   title: "IATA Certification Programs | SKYWAY Institute",
   description:
-    "Comprehensive IATA certification programs offered by SKYWAY Institute in Dubai. Get globally recognized qualifications in aviation, travel, and logistics.",
+    "Explore our IATA-certified courses for aviation, travel, and cargo professionals. Globally recognized qualifications to advance your career.",
 }
 
 export default function IATAPage() {

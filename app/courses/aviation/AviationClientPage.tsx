@@ -65,6 +65,19 @@ export default function AviationClientPage() {
               Comprehensive aviation training programs with international certifications
             </p>
           </div>
+          <div className="mt-8 flex flex-col sm:flex-row gap-4">
+            <Button asChild size="lg" className="bg-white text-skyway-900 hover:bg-gray-100">
+              <Link href="/contact">Enroll Now</Link>
+            </Button>
+            <Button
+              asChild
+              size="lg"
+              variant="outline"
+              className="bg-transparent text-white border-white hover:bg-skyway-800"
+            >
+              <Link href="/courses/aviation/iata">Browse IATA Courses</Link>
+            </Button>
+          </div>
         </div>
       </section>
 
@@ -82,7 +95,11 @@ export default function AviationClientPage() {
 
           <div className="mt-16 grid grid-cols-1 gap-8 md:grid-cols-3">
             {aviationCategories.map((category) => (
-              <Link key={category.id} href={`/courses/aviation/${category.id}`} className="block group">
+              <Link
+                key={category.id}
+                href={category.href || `/courses/aviation/${category.id}`}
+                className="block group"
+              >
                 <Card className="h-full overflow-hidden border-0 shadow-md transition-all duration-300 hover:shadow-lg">
                   <div className="relative h-48 w-full">
                     <Image
@@ -90,10 +107,12 @@ export default function AviationClientPage() {
                       alt={category.title}
                       fill
                       className="object-cover"
+                      loading="lazy" // Add lazy loading for better performance
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" // Add responsive sizes for better performance
                     />
                   </div>
                   <div className={`${category.color} p-8 text-white`}>
-                    <div className="flex justify-between items-start">
+                    <div className="flex justify-between items-center">
                       <div>{category.icon}</div>
                       <ArrowRight className="h-5 w-5 opacity-70 group-hover:translate-x-1 transition-transform duration-300" />
                     </div>
@@ -209,6 +228,58 @@ export default function AviationClientPage() {
                 industry.
               </p>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Add a new section for quick access to popular courses */}
+      {/* Add this after the Features Section and before the CTA Section */}
+      <section className="py-16 bg-white">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="text-center">
+            <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Popular Aviation Courses</h2>
+            <p className="mt-4 max-w-2xl mx-auto text-xl text-gray-500">
+              Quick access to our most sought-after aviation training programs
+            </p>
+          </div>
+
+          <div className="mt-10 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            <Button asChild variant="outline" className="h-auto py-3 justify-start text-left">
+              <Link href="/courses/aviation/iata/airport-operations-fundamentals" className="flex items-center">
+                <Plane className="h-5 w-5 mr-2 flex-shrink-0" />
+                <span>IATA Airport Operations Fundamentals</span>
+              </Link>
+            </Button>
+            <Button asChild variant="outline" className="h-auto py-3 justify-start text-left">
+              <Link href="/courses/aviation/iata/airline-cabin-crew-training" className="flex items-center">
+                <Plane className="h-5 w-5 mr-2 flex-shrink-0" />
+                <span>IATA Airline Cabin Crew Training</span>
+              </Link>
+            </Button>
+            <Button asChild variant="outline" className="h-auto py-3 justify-start text-left">
+              <Link href="/courses/aviation/iata/cargo-introductory-course" className="flex items-center">
+                <Plane className="h-5 w-5 mr-2 flex-shrink-0" />
+                <span>IATA Cargo Introductory Course</span>
+              </Link>
+            </Button>
+            <Button asChild variant="outline" className="h-auto py-3 justify-start text-left">
+              <Link href="/courses/aviation/icao/aviation-security" className="flex items-center">
+                <Plane className="h-5 w-5 mr-2 flex-shrink-0" />
+                <span>ICAO Aviation Security</span>
+              </Link>
+            </Button>
+            <Button asChild variant="outline" className="h-auto py-3 justify-start text-left">
+              <Link href="/courses/aviation/icao/safety-management-systems" className="flex items-center">
+                <Plane className="h-5 w-5 mr-2 flex-shrink-0" />
+                <span>ICAO Safety Management Systems</span>
+              </Link>
+            </Button>
+            <Button asChild variant="outline" className="h-auto py-3 justify-start text-left">
+              <Link href="/courses/aviation/logistics/fiata-diploma" className="flex items-center">
+                <Plane className="h-5 w-5 mr-2 flex-shrink-0" />
+                <span>FIATA Diploma in Freight Forwarding</span>
+              </Link>
+            </Button>
           </div>
         </div>
       </section>

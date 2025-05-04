@@ -7,8 +7,8 @@ import Footer from "@/components/footer"
 import { ThemeProvider } from "@/components/theme-provider"
 import ScrollToTop from "@/components/scroll-to-top"
 import { organizationSchema } from "./structured-data"
-// Import the WebVitals component at the top
-import { WebVitals } from "./web-vitals"
+// Add this import
+import WebVitalsClient from "./web-vitals-client"
 
 const inter = Inter({ subsets: ["latin"], display: "swap" })
 
@@ -74,13 +74,26 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
+        {/* Optimize the layout for better performance */}
+
+        {/* Add preload for critical fonts */}
+        <link rel="preload" href={inter.src} as="font" type="font/woff2" crossOrigin="anonymous" />
+
+        {/* Add a preconnect for external resources */}
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+
+        {/* Add a preload hint for the main navigation */}
+        <link rel="preload" href="/courses/aviation" as="fetch" crossOrigin="anonymous" />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }} />
       </head>
       <body className={inter.className}>
-        <WebVitals />
+        {/* Web Vitals measurement - loaded client-side only */}
+        <WebVitalsClient />
         <ThemeProvider attribute="class" defaultTheme="light" enableSystem disableTransitionOnChange>
           <ScrollToTop />
-          <Header />
+          {/* Add priority to critical images in the Header component */}
+          {/* Update the Header component to include a performance prop */}
+          <Header priority={true} />
           <main className="min-h-screen">{children}</main>
           <Footer />
         </ThemeProvider>

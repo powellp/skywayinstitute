@@ -11,17 +11,18 @@ const iataCertifications = [
     id: "airport-operations-fundamentals",
     title: "IATA Airport Operations Fundamentals",
     description:
-      "Learn the essential principles of airport operations, including terminal management, ground handling, and safety procedures.",
-    duration: "3 weeks",
+      "The IATA Airport Operations Training course is one of the most sought-after certification programs in the UAE. Learn essential principles of airport operations, including terminal management, ground handling, and safety procedures.",
+    duration: "2 months",
     level: "Foundation",
     features: [
-      "Airport infrastructure and layout",
-      "Passenger flow management",
-      "Ground handling operations",
-      "Safety and security procedures",
-      "Airport service quality management",
+      "Understand aviation history and airports' economic role",
+      "Identify airport customers and partners",
+      "Learn operational and business functions of airports",
+      "Apply knowledge within an airport environment",
+      "Gain insights into future airport technologies",
     ],
-    image: "/images/iata/airport-operations.jpg", // Updated image path
+    image: "/images/iata/airport-operations.jpg",
+    href: "/courses/aviation/iata/airport-operations-fundamentals",
   },
   {
     id: "airline-cabin-crew-training",
@@ -37,7 +38,8 @@ const iataCertifications = [
       "Passenger handling techniques",
       "Grooming and presentation standards",
     ],
-    image: "/images/iata/cabin-crew.jpg", // Updated image path
+    image: "/images/iata/cabin-crew.jpg",
+    href: "/courses/aviation/iata/airline-cabin-crew-training",
   },
   {
     id: "passenger-ground-services",
@@ -54,6 +56,7 @@ const iataCertifications = [
       "Customer service excellence",
     ],
     image: "/placeholder.svg?height=200&width=300",
+    href: "/courses/aviation/iata/passenger-ground-services",
   },
   {
     id: "airport-ramp-service",
@@ -70,6 +73,7 @@ const iataCertifications = [
       "Ground support equipment operation",
     ],
     image: "/placeholder.svg?height=200&width=300",
+    href: "/courses/aviation/iata/airport-ramp-service",
   },
   {
     id: "ground-operations-management",
@@ -86,6 +90,7 @@ const iataCertifications = [
       "Leadership in ground handling teams",
     ],
     image: "/placeholder.svg?height=200&width=300",
+    href: "/courses/aviation/iata/ground-operations-management",
   },
   {
     id: "cargo-introductory-course",
@@ -102,6 +107,7 @@ const iataCertifications = [
       "Cargo security requirements",
     ],
     image: "/placeholder.svg?height=200&width=300",
+    href: "/courses/aviation/iata/cargo-introductory-course",
   },
   {
     id: "air-cargo-advanced-marketing",
@@ -118,6 +124,7 @@ const iataCertifications = [
       "Business development strategies",
     ],
     image: "/placeholder.svg?height=200&width=300",
+    href: "/courses/aviation/iata/air-cargo-advanced-marketing",
   },
   {
     id: "cargo-supply-chain-transport-modes",
@@ -134,6 +141,7 @@ const iataCertifications = [
       "Technology in supply chain management",
     ],
     image: "/placeholder.svg?height=200&width=300",
+    href: "/courses/aviation/iata/cargo-supply-chain-transport-modes",
   },
   {
     id: "aviation-security-awareness",
@@ -150,6 +158,7 @@ const iataCertifications = [
       "Security culture development",
     ],
     image: "/placeholder.svg?height=200&width=300",
+    href: "/courses/aviation/iata/aviation-security-awareness",
   },
   {
     id: "cargo-security-awareness",
@@ -166,6 +175,7 @@ const iataCertifications = [
       "Regulatory compliance in cargo security",
     ],
     image: "/placeholder.svg?height=200&width=300",
+    href: "/courses/aviation/iata/cargo-security-awareness",
   },
   {
     id: "safety-management-systems",
@@ -181,6 +191,7 @@ const iataCertifications = [
       "Regulatory requirements for SMS",
     ],
     image: "/placeholder.svg?height=200&width=300",
+    href: "/courses/aviation/iata/safety-management-systems",
   },
   {
     id: "live-animals-cargo-personnel",
@@ -197,6 +208,7 @@ const iataCertifications = [
       "Emergency procedures for live animal shipments",
     ],
     image: "/placeholder.svg?height=200&width=300",
+    href: "/courses/aviation/iata/live-animals-cargo-personnel",
   },
   {
     id: "travel-tourism-consultant",
@@ -213,6 +225,7 @@ const iataCertifications = [
       "Customer service excellence",
     ],
     image: "/placeholder.svg?height=200&width=300",
+    href: "/courses/aviation/iata/travel-tourism-consultant",
   },
   {
     id: "travel-tourism-amadeus",
@@ -229,6 +242,7 @@ const iataCertifications = [
       "Customer service and sales techniques",
     ],
     image: "/placeholder.svg?height=200&width=300",
+    href: "/courses/aviation/iata/travel-tourism-amadeus",
   },
   {
     id: "travel-tourism-galileo",
@@ -245,6 +259,7 @@ const iataCertifications = [
       "Customer service and sales techniques",
     ],
     image: "/placeholder.svg?height=200&width=300",
+    href: "/courses/aviation/iata/travel-tourism-galileo",
   },
   {
     id: "travel-tourism-sabre",
@@ -261,6 +276,7 @@ const iataCertifications = [
       "Customer service and sales techniques",
     ],
     image: "/placeholder.svg?height=200&width=300",
+    href: "/courses/aviation/iata/travel-tourism-sabre",
   },
   {
     id: "quality-management-systems",
@@ -277,22 +293,24 @@ const iataCertifications = [
       "Quality culture development",
     ],
     image: "/placeholder.svg?height=200&width=300",
+    href: "/courses/aviation/iata/quality-management-systems",
   },
   {
     id: "pharma-products-vaccines",
-    title: "IATA Transport of Pharma Products and Vaccines by Air",
+    title: "IATA Temperature Controlled Pharmaceutical Products (TCP) & Vaccines",
     description:
-      "Specialized training for handling temperature-sensitive pharmaceutical products and vaccines in air transport.",
-    duration: "3 weeks",
+      "Training on the handling and transporting of pharmaceutical products and vaccines that require temperature control.",
+    duration: "2 weeks",
     level: "Specialized",
     features: [
-      "Pharmaceutical logistics requirements",
-      "Temperature-controlled supply chains",
-      "Packaging and container specifications",
-      "Regulatory compliance for pharma transport",
-      "Quality management in pharma logistics",
+      "Temperature control requirements",
+      "Packaging and labeling",
+      "Storage and handling",
+      "Documentation",
+      "Regulatory compliance",
     ],
     image: "/placeholder.svg?height=200&width=300",
+    href: "/courses/aviation/iata/pharma-products-vaccines",
   },
 ]
 
@@ -305,108 +323,80 @@ export default function IATAClientPage() {
           <div className="text-center">
             <h1 className="text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl">IATA Certification Programs</h1>
             <p className="mt-6 mx-auto max-w-2xl text-xl text-skyway-100">
-              Globally recognized qualifications for aviation, travel, and logistics professionals
+              Globally recognized qualifications for aviation, travel, and cargo professionals
             </p>
+            <div className="mt-8 flex justify-center">
+              <Button asChild size="lg" className="bg-white text-skyway-900 hover:bg-gray-100">
+                <Link href="/contact">Enroll Now</Link>
+              </Button>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Introduction Section */}
+      {/* IATA Certifications */}
       <section className="py-16 bg-white">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="lg:flex lg:items-center lg:gap-x-12">
-            <div className="lg:w-1/2">
-              <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-                Why Choose IATA Certifications?
-              </h2>
-              <p className="mt-4 text-lg text-gray-500">
-                IATA (International Air Transport Association) certifications are globally recognized qualifications
-                that validate your knowledge and skills in the aviation industry. As an IATA Authorized Training Center,
-                SKYWAY Institute offers comprehensive IATA certification programs that can boost your career prospects
-                in aviation, travel, and logistics.
-              </p>
-              <div className="mt-8">
-                <ul className="space-y-4">
-                  {[
-                    "Globally recognized qualifications",
-                    "Industry-relevant curriculum developed by experts",
-                    "Enhanced career opportunities worldwide",
-                    "Access to IATA's global network",
-                    "Training delivered by certified instructors",
-                  ].map((feature, index) => (
-                    <li key={index} className="flex items-start">
-                      <CheckCircle className="h-6 w-6 text-skyway-600 mr-2 flex-shrink-0" />
-                      <span className="text-gray-600">{feature}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </div>
-            <div className="mt-10 lg:mt-0 lg:w-1/2 flex justify-center">
-              <div className="relative h-64 w-full lg:h-96 rounded-lg overflow-hidden shadow-xl">
-                <Image
-                  src="/images/iata/hero-image.jpg" // Updated from placeholder
-                  alt="IATA Certification"
-                  fill
-                  className="object-cover"
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Certification Programs */}
-      <section className="py-16 bg-gray-50">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-              Our IATA Certification Programs
+              Explore Our IATA Certification Programs
             </h2>
             <p className="mt-4 max-w-2xl mx-auto text-xl text-gray-500">
-              Choose from our comprehensive range of IATA-certified courses
+              We offer a wide range of IATA-certified courses to enhance your aviation career
             </p>
           </div>
 
-          <div className="mt-16 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
-            {iataCertifications.map((cert) => (
+          <div className="mt-16 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+            {iataCertifications.map((certification) => (
               <Card
-                key={cert.id}
+                key={certification.id}
                 className="overflow-hidden border-0 shadow-md transition-all duration-300 hover:shadow-lg"
               >
                 <div className="relative h-48 w-full">
-                  <Image src={cert.image || "/placeholder.svg"} alt={cert.title} fill className="object-cover" />
+                  <Image
+                    src={certification.image || "/placeholder.svg"}
+                    alt={certification.title}
+                    fill
+                    className="object-cover"
+                  />
                 </div>
                 <CardHeader className="bg-skyway-900 text-white p-4">
                   <div className="flex justify-between items-center">
                     <Award className="h-6 w-6" />
                     <div className="flex space-x-2">
                       <span className="inline-flex items-center rounded-full bg-skyway-100 px-2.5 py-0.5 text-xs font-medium text-skyway-800">
-                        {cert.duration}
+                        {certification.duration}
                       </span>
                       <span className="inline-flex items-center rounded-full bg-skyway-100 px-2.5 py-0.5 text-xs font-medium text-skyway-800">
-                        {cert.level}
+                        {certification.level}
                       </span>
                     </div>
                   </div>
-                  <h3 className="mt-2 text-lg font-bold">{cert.title}</h3>
+                  <h3 className="mt-2 text-xl font-bold">{certification.title}</h3>
                 </CardHeader>
-                <CardContent className="p-4">
-                  <p className="text-gray-600 mb-4">{cert.description}</p>
+                <CardContent className="p-6">
+                  <p className="text-gray-600 mb-4">{certification.description}</p>
                   <h4 className="font-semibold text-gray-900 mb-2">What You'll Learn:</h4>
                   <ul className="space-y-2 mb-6">
-                    {cert.features.map((feature, index) => (
+                    {certification.features.map((feature, index) => (
                       <li key={index} className="flex items-start">
                         <CheckCircle className="h-4 w-4 text-skyway-600 mr-2 flex-shrink-0 mt-1" />
                         <span className="text-sm text-gray-600">{feature}</span>
                       </li>
                     ))}
                   </ul>
-                  <Button asChild className="w-full">
-                    <Link href={`/courses/aviation/iata/${cert.id}`} className="flex items-center justify-center">
-                      Learn More <ArrowRight className="ml-2 h-4 w-4" />
-                    </Link>
-                  </Button>
+                  <div className="flex gap-2">
+                    <Button asChild className="w-full">
+                      <Link href={certification.href} className="flex items-center justify-center">
+                        View Details <ArrowRight className="ml-2 h-4 w-4" />
+                      </Link>
+                    </Button>
+                    <Button asChild variant="outline" className="w-full">
+                      <Link href="/contact" className="flex items-center justify-center">
+                        Enroll Now
+                      </Link>
+                    </Button>
+                  </div>
                 </CardContent>
               </Card>
             ))}
@@ -415,21 +405,20 @@ export default function IATAClientPage() {
       </section>
 
       {/* Career Opportunities */}
-      <section className="py-16 bg-white">
+      <section className="py-16 bg-gray-50">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Career Opportunities</h2>
             <p className="mt-4 max-w-2xl mx-auto text-xl text-gray-500">
-              IATA certifications open doors to exciting career paths in aviation
+              IATA certifications open doors to specialized aviation roles
             </p>
           </div>
 
           <div className="mt-16 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
             {[
               {
-                title: "Airlines",
-                description:
-                  "Roles in passenger services, cabin crew, operations, cargo handling, and management positions.",
+                title: "Airline Operations",
+                description: "Positions in airline management, flight operations, and customer service.",
                 icon: (
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -443,8 +432,8 @@ export default function IATAClientPage() {
                 ),
               },
               {
-                title: "Airports",
-                description: "Positions in ground handling, terminal operations, security, and airport management.",
+                title: "Airport Management",
+                description: "Careers in airport operations, terminal management, and ground handling services.",
                 icon: (
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -459,7 +448,7 @@ export default function IATAClientPage() {
               },
               {
                 title: "Travel Agencies",
-                description: "Careers in travel consulting, ticketing, tour operations, and agency management.",
+                description: "Roles as travel consultants, ticketing agents, and tour operators.",
                 icon: (
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -473,9 +462,8 @@ export default function IATAClientPage() {
                 ),
               },
               {
-                title: "Cargo & Logistics",
-                description:
-                  "Opportunities in freight forwarding, cargo operations, supply chain management, and logistics.",
+                title: "Cargo Operations",
+                description: "Opportunities in air cargo handling, logistics, and supply chain management.",
                 icon: (
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -489,8 +477,8 @@ export default function IATAClientPage() {
                 ),
               },
               {
-                title: "Regulatory Bodies",
-                description: "Roles in aviation authorities, compliance departments, and regulatory agencies.",
+                title: "Aviation Security",
+                description: "Careers in aviation security, threat assessment, and security management systems.",
                 icon: (
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -504,8 +492,8 @@ export default function IATAClientPage() {
                 ),
               },
               {
-                title: "Consultancy",
-                description: "Opportunities as aviation consultants, trainers, and industry specialists.",
+                title: "Ground Handling Services",
+                description: "Positions in ground handling companies, providing services to airlines at airports.",
                 icon: (
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -541,10 +529,11 @@ export default function IATAClientPage() {
             <div className="px-6 py-12 sm:px-12 lg:py-16 lg:pr-0 xl:py-20 xl:px-20">
               <div className="lg:self-center">
                 <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
-                  <span className="block">Ready to advance your aviation career?</span>
+                  <span className="block">Ready to take your aviation career to new heights?</span>
                 </h2>
                 <p className="mt-4 text-lg leading-6 text-skyway-100">
-                  Enroll in our IATA certification programs and take your career to new heights.
+                  Enroll in our IATA certification programs and gain the skills and knowledge to excel in the aviation
+                  industry.
                 </p>
                 <div className="mt-8 flex flex-col sm:flex-row gap-4">
                   <Button asChild size="lg" className="bg-white text-skyway-900 hover:bg-gray-100">

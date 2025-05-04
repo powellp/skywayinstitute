@@ -18,12 +18,13 @@ const navigation = [
     href: "/courses",
     submenu: [
       {
-        name: "IATA & Aviation",
+        name: "Aviation Courses",
         href: "/courses/aviation",
         subcategories: [
-          { name: "IATA Certifications", href: "/courses/aviation/iata" },
-          { name: "Airport Operations", href: "/courses/aviation/airport-operations" },
-          { name: "Travel & Tourism", href: "/courses/aviation/travel-tourism" },
+          { name: "IATA Certifications", href: "/courses/aviation/iata", highlight: true },
+          { name: "ICAO Programs", href: "/courses/aviation/icao" },
+          { name: "Logistics & Cargo", href: "/courses/aviation/logistics" },
+          { name: "View All Aviation Courses", href: "/courses/aviation" },
         ],
       },
       {
@@ -189,7 +190,7 @@ export default function Header() {
                     {item.name} <ChevronDown className="ml-1 h-4 w-4" />
                   </button>
                 </DropdownMenuTrigger>
-                <DropdownMenuContent align="center" className="w-[280px] p-2">
+                <DropdownMenuContent align="center" className="w-[320px] p-2">
                   <div className="grid grid-cols-1 gap-1">
                     {item.submenu.map((subitem) => (
                       <div key={subitem.name} className="space-y-1">
@@ -207,7 +208,7 @@ export default function Header() {
                                 <DropdownMenuItem key={subcategory.name} asChild className="px-3 py-1 text-xs">
                                   <Link
                                     href={subcategory.href}
-                                    className="w-full text-gray-600 hover:text-skyway-700"
+                                    className={`w-full ${subcategory.highlight ? "text-skyway-700 font-semibold" : "text-gray-600"} hover:text-skyway-700`}
                                     onClick={() => setMobileMenuOpen(false)}
                                   >
                                     {subcategory.name}
@@ -411,12 +412,12 @@ export default function Header() {
                                     {subitem.name}
                                   </Link>
                                   {subitem.subcategories && (
-                                    <div className="ml-4 space-y-1 border-l-2 border-skyway-100 pl-2">
+                                    <div className="ml-4 space-y-2 border-l-2 border-skyway-100 pl-2">
                                       {subitem.subcategories.map((subcategory) => (
                                         <Link
                                           key={subcategory.name}
                                           href={subcategory.href}
-                                          className="-mx-3 block rounded-lg px-3 py-1 text-sm leading-7 text-gray-700 hover:bg-gray-50"
+                                          className={`-mx-3 block rounded-lg px-3 py-1 text-sm leading-7 ${subcategory.highlight ? "text-skyway-700 font-semibold" : "text-gray-700"} hover:bg-gray-50`}
                                           onClick={() => setMobileMenuOpen(false)}
                                         >
                                           {subcategory.name}

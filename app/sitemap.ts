@@ -47,12 +47,59 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/courses/aviation/iata/travel-tourism",
     "/courses/exam-preparation/english-exam/ielts",
     "/courses/exam-preparation/english-exam/pte",
-  ].map((route) => ({
-    url: `${baseUrl}${route}`,
-    lastModified: new Date(),
-    changeFrequency: "monthly" as const,
-    priority: 0.5,
-  }))
+    {
+      url: `${baseUrl}/courses/aviation/iata/passenger-ground-services`,
+      lastModified: new Date(),
+      changeFrequency: "monthly" as const,
+      priority: 0.5,
+    },
+    {
+      url: `${baseUrl}/courses/aviation/iata/dangerous-goods-regulations`,
+      lastModified: new Date(),
+      changeFrequency: "monthly" as const,
+      priority: 0.5,
+    },
+    {
+      url: `${baseUrl}/courses/aviation/iata/air-transport-fundamentals`,
+      lastModified: new Date(),
+      changeFrequency: "monthly" as const,
+      priority: 0.5,
+    },
+    {
+      url: `${baseUrl}/courses/aviation/iata/aviation-security-awareness`,
+      lastModified: new Date(),
+      changeFrequency: "monthly" as const,
+      priority: 0.5,
+    },
+    {
+      url: `${baseUrl}/courses/aviation/iata/travel-and-tourism`,
+      lastModified: new Date(),
+      changeFrequency: "monthly" as const,
+      priority: 0.5,
+    },
+    {
+      url: `${baseUrl}/courses/aviation/iata/airline-customer-service`,
+      lastModified: new Date(),
+      changeFrequency: "monthly" as const,
+      priority: 0.5,
+    },
+    {
+      url: `${baseUrl}/courses/aviation/iata/airport-ramp-services`,
+      lastModified: new Date(),
+      changeFrequency: "monthly" as const,
+      priority: 0.5,
+    },
+  ].map((route) => {
+    if (typeof route === "string") {
+      return {
+        url: `${baseUrl}${route}`,
+        lastModified: new Date(),
+        changeFrequency: "monthly" as const,
+        priority: 0.5,
+      }
+    }
+    return route
+  })
 
   return [...routes, ...courseCategories, ...courseSubcategories, ...individualCourses]
 }
