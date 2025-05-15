@@ -1,24 +1,18 @@
 import type React from "react"
-import type { Metadata } from "next"
-import CourseNavigation from "./course-navigation"
+import CourseNavigation from "@/components/course-navigation"
 
-export const metadata: Metadata = {
-  title: {
-    template: "%s | SKYWAY Institute Dubai",
-    default: "Aviation Courses | SKYWAY Institute Dubai",
-  },
-  description: "Explore our comprehensive aviation training programs at SKYWAY Institute Dubai.",
-}
+export default function AviationLayout({ children }: { children: React.ReactNode }) {
+  const aviationRoutes = [
+    { name: "All Aviation Courses", href: "/courses/aviation" },
+    { name: "IATA Certifications", href: "/courses/aviation/iata" },
+    { name: "ICAO Programs", href: "/courses/aviation/icao" },
+    { name: "Logistics & Cargo", href: "/courses/aviation/logistics" },
+  ]
 
-export default function AviationLayout({
-  children,
-}: {
-  children: React.ReactNode
-}) {
   return (
-    <div className="min-h-screen">
-      <CourseNavigation />
+    <>
+      <CourseNavigation routes={aviationRoutes} backLink={{ name: "All Courses", href: "/courses" }} />
       {children}
-    </div>
+    </>
   )
 }

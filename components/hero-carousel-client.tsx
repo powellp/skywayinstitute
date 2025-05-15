@@ -57,7 +57,7 @@ export default function HeroCarouselClient() {
 
   return (
     <section className="relative bg-gray-900 overflow-hidden">
-      <div className="relative h-[600px] md:h-[700px]">
+      <div className="relative h-[400px] md:h-[500px]">
         {slides.map((slide, index) => (
           <div
             key={index}
@@ -73,8 +73,8 @@ export default function HeroCarouselClient() {
             <div className="absolute inset-0 hero-gradient"></div>
             <div className="absolute inset-0 flex items-center justify-center">
               <div className="text-center text-white px-4 sm:px-6 lg:px-8 max-w-4xl">
-                <h1 className="text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl mb-6">{slide.title}</h1>
-                <p className="text-xl sm:text-2xl mb-8">{slide.description}</p>
+                <h1 className="text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl mb-4">{slide.title}</h1>
+                <p className="text-lg sm:text-xl mb-6">{slide.description}</p>
                 <div className="flex flex-col sm:flex-row justify-center gap-4">
                   <Button asChild size="lg" className="bg-white text-skyway-900 hover:bg-gray-100">
                     <Link href="/courses">Explore Courses</Link>
@@ -111,7 +111,7 @@ export default function HeroCarouselClient() {
       </button>
 
       {/* Dots */}
-      <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex space-x-2">
+      <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex space-x-2">
         {slides.map((_, index) => (
           <button
             key={index}

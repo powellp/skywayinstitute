@@ -32,22 +32,40 @@ export default function ContactPage() {
     setFormState((prev) => ({ ...prev, interest: value }))
   }
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     setIsSubmitting(true)
 
-    // Simulate form submission
-    setTimeout(() => {
-      setIsSubmitting(false)
-      setIsSubmitted(true)
-      setFormState({
-        name: "",
-        email: "",
-        phone: "",
-        interest: "",
-        message: "",
+    try {
+      // Simulate form submission with a POST request
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formState),
       })
-    }, 1500)
+
+      if (response.ok) {
+        setIsSubmitted(true)
+        setFormState({
+          name: "",
+          email: "",
+          phone: "",
+          interest: "",
+          message: "",
+        })
+      } else {
+        // Handle error case
+        console.error("Form submission failed:", response.status)
+        alert("Form submission failed. Please try again.")
+      }
+    } catch (error) {
+      console.error("An error occurred:", error)
+      alert("An error occurred during form submission. Please try again.")
+    } finally {
+      setIsSubmitting(false)
+    }
   }
 
   return (
