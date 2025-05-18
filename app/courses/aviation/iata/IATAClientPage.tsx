@@ -5,7 +5,9 @@ import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader } from "@/components/ui/card"
 import { CheckCircle, Award, ArrowRight } from "lucide-react"
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 
+// IATA course data
 const iataCertifications = [
   {
     id: "airport-operations-fundamentals",
@@ -17,6 +19,7 @@ const iataCertifications = [
     features: [
       "Understand aviation history and airports' economic role",
       "Identify airport customers and partners",
+      "Learn operational and business functions of airports",
       "Learn operational and business functions of airports",
       "Apply knowledge within an airport environment",
       "Gain insights into future airport technologies",
@@ -314,6 +317,34 @@ const iataCertifications = [
   },
 ]
 
+// Career opportunities
+const careerOpportunities = [
+  {
+    title: "Airline Operations",
+    description: "Positions in airline management, flight operations, and customer service.",
+  },
+  {
+    title: "Airport Management",
+    description: "Careers in airport operations, terminal management, and ground handling services.",
+  },
+  {
+    title: "Travel Agencies",
+    description: "Roles as travel consultants, ticketing agents, and tour operators.",
+  },
+  {
+    title: "Cargo Operations",
+    description: "Opportunities in air cargo handling, logistics, and supply chain management.",
+  },
+  {
+    title: "Aviation Security",
+    description: "Careers in aviation security, threat assessment, and security management systems.",
+  },
+  {
+    title: "Ground Handling Services",
+    description: "Positions in ground handling companies, providing services to airlines at airports.",
+  },
+]
+
 export default function IATAClientPage() {
   return (
     <div className="flex flex-col min-h-screen">
@@ -325,200 +356,310 @@ export default function IATAClientPage() {
             <p className="mt-6 mx-auto max-w-2xl text-xl text-skyway-100">
               Globally recognized qualifications for aviation, travel, and cargo professionals
             </p>
-            <div className="mt-8 flex justify-center">
+            <div className="mt-8 flex justify-center gap-4">
               <Button asChild size="lg" className="bg-white text-skyway-900 hover:bg-gray-100">
                 <Link href="/contact">Enroll Now</Link>
+              </Button>
+              <Button
+                asChild
+                size="lg"
+                variant="outline"
+                className="bg-transparent text-white border-white hover:bg-skyway-800"
+              >
+                <Link href="/contact">Request Information</Link>
               </Button>
             </div>
           </div>
         </div>
       </section>
 
-      {/* IATA Certifications */}
+      {/* Main Content */}
       <section className="py-16 bg-white">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="text-center">
-            <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-              Explore Our IATA Certification Programs
-            </h2>
-            <p className="mt-4 max-w-2xl mx-auto text-xl text-gray-500">
-              We offer a wide range of IATA-certified courses to enhance your aviation career
-            </p>
-          </div>
+          <Tabs defaultValue="overview" className="w-full">
+            <TabsList className="grid w-full grid-cols-2 md:grid-cols-4 mb-8">
+              <TabsTrigger value="overview">Overview</TabsTrigger>
+              <TabsTrigger value="courses">Courses</TabsTrigger>
+              <TabsTrigger value="careers">Career Paths</TabsTrigger>
+              <TabsTrigger value="faq">FAQ</TabsTrigger>
+            </TabsList>
 
-          <div className="mt-16 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
-            {iataCertifications.map((certification) => (
-              <Card
-                key={certification.id}
-                className="overflow-hidden border-0 shadow-md transition-all duration-300 hover:shadow-lg"
-              >
-                <div className="relative h-48 w-full">
-                  <Image
-                    src={certification.image || "/placeholder.svg"}
-                    alt={certification.title}
-                    fill
-                    className="object-cover"
-                  />
-                </div>
-                <CardHeader className="bg-skyway-900 text-white p-4">
-                  <div className="flex justify-between items-center">
-                    <Award className="h-6 w-6" />
-                    <div className="flex space-x-2">
-                      <span className="inline-flex items-center rounded-full bg-skyway-100 px-2.5 py-0.5 text-xs font-medium text-skyway-800">
-                        {certification.duration}
-                      </span>
-                      <span className="inline-flex items-center rounded-full bg-skyway-100 px-2.5 py-0.5 text-xs font-medium text-skyway-800">
-                        {certification.level}
-                      </span>
-                    </div>
-                  </div>
-                  <h3 className="mt-2 text-xl font-bold">{certification.title}</h3>
-                </CardHeader>
-                <CardContent className="p-6">
-                  <p className="text-gray-600 mb-4">{certification.description}</p>
-                  <h4 className="font-semibold text-gray-900 mb-2">What You'll Learn:</h4>
-                  <ul className="space-y-2 mb-6">
-                    {certification.features.map((feature, index) => (
-                      <li key={index} className="flex items-start">
-                        <CheckCircle className="h-4 w-4 text-skyway-600 mr-2 flex-shrink-0 mt-1" />
-                        <span className="text-sm text-gray-600">{feature}</span>
+            <TabsContent value="overview" className="space-y-8">
+              <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                <div className="lg:col-span-2">
+                  <h2 className="text-2xl font-bold text-gray-900 mb-4">IATA Training Overview</h2>
+                  <p className="text-gray-600 mb-4">
+                    The International Air Transport Association (IATA) is the trade association for the world's
+                    airlines, representing some 290 airlines or 83% of total air traffic. IATA supports many areas of
+                    aviation activity and helps formulate industry policy on critical aviation issues.
+                  </p>
+                  <p className="text-gray-600 mb-4">
+                    SKYWAY Institute is proud to be an IATA Authorized Training Center (ATC), offering a comprehensive
+                    range of IATA-certified courses designed to meet the needs of aviation professionals at all levels.
+                    Our courses cover various aspects of the aviation industry, including airport operations, airline
+                    management, cargo handling, travel and tourism, and more.
+                  </p>
+                  <p className="text-gray-600">
+                    Whether you're looking to start a career in aviation or advance your existing career, our
+                    IATA-certified courses provide the knowledge, skills, and credentials you need to succeed in this
+                    dynamic industry.
+                  </p>
+
+                  <div className="mt-8">
+                    <h3 className="text-xl font-bold text-gray-900 mb-4">Why Choose IATA Certification?</h3>
+                    <ul className="grid grid-cols-1 gap-3">
+                      <li className="flex items-start">
+                        <CheckCircle className="h-5 w-5 text-skyway-600 mr-2 flex-shrink-0 mt-0.5" />
+                        <span className="text-gray-600">
+                          <strong>Global Recognition:</strong> IATA certifications are recognized worldwide by airlines,
+                          airports, and aviation-related organizations.
+                        </span>
                       </li>
-                    ))}
-                  </ul>
-                  <div className="flex gap-2">
-                    <Button asChild className="w-full">
-                      <Link href={certification.href} className="flex items-center justify-center">
-                        View Details <ArrowRight className="ml-2 h-4 w-4" />
-                      </Link>
-                    </Button>
-                    <Button asChild variant="outline" className="w-full">
-                      <Link href="/contact" className="flex items-center justify-center">
-                        Enroll Now
-                      </Link>
-                    </Button>
+                      <li className="flex items-start">
+                        <CheckCircle className="h-5 w-5 text-skyway-600 mr-2 flex-shrink-0 mt-0.5" />
+                        <span className="text-gray-600">
+                          <strong>Industry-Relevant Skills:</strong> Courses are developed by industry experts and focus
+                          on practical, applicable knowledge.
+                        </span>
+                      </li>
+                      <li className="flex items-start">
+                        <CheckCircle className="h-5 w-5 text-skyway-600 mr-2 flex-shrink-0 mt-0.5" />
+                        <span className="text-gray-600">
+                          <strong>Career Advancement:</strong> IATA certifications can open doors to new career
+                          opportunities and advancement in the aviation industry.
+                        </span>
+                      </li>
+                      <li className="flex items-start">
+                        <CheckCircle className="h-5 w-5 text-skyway-600 mr-2 flex-shrink-0 mt-0.5" />
+                        <span className="text-gray-600">
+                          <strong>Up-to-Date Content:</strong> Courses are regularly updated to reflect the latest
+                          industry standards, regulations, and best practices.
+                        </span>
+                      </li>
+                      <li className="flex items-start">
+                        <CheckCircle className="h-5 w-5 text-skyway-600 mr-2 flex-shrink-0 mt-0.5" />
+                        <span className="text-gray-600">
+                          <strong>Networking Opportunities:</strong> Connect with industry professionals and expand your
+                          professional network.
+                        </span>
+                      </li>
+                    </ul>
                   </div>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Career Opportunities */}
-      <section className="py-16 bg-gray-50">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="text-center">
-            <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Career Opportunities</h2>
-            <p className="mt-4 max-w-2xl mx-auto text-xl text-gray-500">
-              IATA certifications open doors to specialized aviation roles
-            </p>
-          </div>
-
-          <div className="mt-16 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
-            {[
-              {
-                title: "Airline Operations",
-                description: "Positions in airline management, flight operations, and customer service.",
-                icon: (
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    className="h-8 w-8 text-skyway-600"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                  >
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                  </svg>
-                ),
-              },
-              {
-                title: "Airport Management",
-                description: "Careers in airport operations, terminal management, and ground handling services.",
-                icon: (
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    className="h-8 w-8 text-skyway-600"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                  >
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                  </svg>
-                ),
-              },
-              {
-                title: "Travel Agencies",
-                description: "Roles as travel consultants, ticketing agents, and tour operators.",
-                icon: (
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    className="h-8 w-8 text-skyway-600"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                  >
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                  </svg>
-                ),
-              },
-              {
-                title: "Cargo Operations",
-                description: "Opportunities in air cargo handling, logistics, and supply chain management.",
-                icon: (
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    className="h-8 w-8 text-skyway-600"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                  >
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                  </svg>
-                ),
-              },
-              {
-                title: "Aviation Security",
-                description: "Careers in aviation security, threat assessment, and security management systems.",
-                icon: (
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    className="h-8 w-8 text-skyway-600"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                  >
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                  </svg>
-                ),
-              },
-              {
-                title: "Ground Handling Services",
-                description: "Positions in ground handling companies, providing services to airlines at airports.",
-                icon: (
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    className="h-8 w-8 text-skyway-600"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                  >
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                  </svg>
-                ),
-              },
-            ].map((career, index) => (
-              <div
-                key={index}
-                className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300"
-              >
-                <div className="h-12 w-12 rounded-full bg-skyway-100 flex items-center justify-center mb-4">
-                  {career.icon}
                 </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-2">{career.title}</h3>
-                <p className="text-gray-600">{career.description}</p>
+
+                <div>
+                  <Card className="border-0 shadow-lg">
+                    <CardContent className="p-6">
+                      <h3 className="text-xl font-bold text-gray-900 mb-4">SKYWAY Institute Advantages</h3>
+                      <ul className="space-y-3">
+                        <li className="flex items-start">
+                          <Award className="h-5 w-5 text-skyway-600 mr-2 flex-shrink-0 mt-0.5" />
+                          <span className="text-gray-600">IATA Authorized Training Center</span>
+                        </li>
+                        <li className="flex items-start">
+                          <Award className="h-5 w-5 text-skyway-600 mr-2 flex-shrink-0 mt-0.5" />
+                          <span className="text-gray-600">Experienced industry instructors</span>
+                        </li>
+                        <li className="flex items-start">
+                          <Award className="h-5 w-5 text-skyway-600 mr-2 flex-shrink-0 mt-0.5" />
+                          <span className="text-gray-600">Flexible training schedules</span>
+                        </li>
+                        <li className="flex items-start">
+                          <Award className="h-5 w-5 text-skyway-600 mr-2 flex-shrink-0 mt-0.5" />
+                          <span className="text-gray-600">State-of-the-art training facilities</span>
+                        </li>
+                        <li className="flex items-start">
+                          <Award className="h-5 w-5 text-skyway-600 mr-2 flex-shrink-0 mt-0.5" />
+                          <span className="text-gray-600">Practical, hands-on training</span>
+                        </li>
+                        <li className="flex items-start">
+                          <Award className="h-5 w-5 text-skyway-600 mr-2 flex-shrink-0 mt-0.5" />
+                          <span className="text-gray-600">Career guidance and placement assistance</span>
+                        </li>
+                      </ul>
+
+                      <div className="mt-6 pt-6 border-t border-gray-200">
+                        <h4 className="font-semibold text-gray-900 mb-4">Training Options</h4>
+                        <ul className="space-y-2">
+                          <li className="flex items-start">
+                            <CheckCircle className="h-4 w-4 text-skyway-600 mr-2 flex-shrink-0 mt-1" />
+                            <span className="text-sm text-gray-600">Regular weekday programs</span>
+                          </li>
+                          <li className="flex items-start">
+                            <CheckCircle className="h-4 w-4 text-skyway-600 mr-2 flex-shrink-0 mt-1" />
+                            <span className="text-sm text-gray-600">Weekend programs for working professionals</span>
+                          </li>
+                          <li className="flex items-start">
+                            <CheckCircle className="h-4 w-4 text-skyway-600 mr-2 flex-shrink-0 mt-1" />
+                            <span className="text-sm text-gray-600">Corporate training packages</span>
+                          </li>
+                          <li className="flex items-start">
+                            <CheckCircle className="h-4 w-4 text-skyway-600 mr-2 flex-shrink-0 mt-1" />
+                            <span className="text-sm text-gray-600">Online and hybrid learning options</span>
+                          </li>
+                        </ul>
+                      </div>
+
+                      <div className="mt-6">
+                        <Button asChild className="w-full">
+                          <Link href="/contact">
+                            <span className="flex items-center justify-center">
+                              Request Information <ArrowRight className="ml-2 h-4 w-4" />
+                            </span>
+                          </Link>
+                        </Button>
+                      </div>
+                    </CardContent>
+                  </Card>
+                </div>
               </div>
-            ))}
-          </div>
+            </TabsContent>
+
+            <TabsContent value="courses" className="space-y-8">
+              <div>
+                <h2 className="text-2xl font-bold text-gray-900 mb-6">IATA Certification Programs</h2>
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                  {iataCertifications.map((certification) => (
+                    <Card
+                      key={certification.id}
+                      className="overflow-hidden border-0 shadow-md transition-all duration-300 hover:shadow-lg"
+                    >
+                      <div className="relative h-48 w-full">
+                        <Image
+                          src={certification.image || "/placeholder.svg?height=200&width=300"}
+                          alt={certification.title}
+                          fill
+                          className="object-cover"
+                        />
+                      </div>
+                      <CardHeader className="bg-skyway-900 text-white p-4">
+                        <div className="flex justify-between items-center">
+                          <Award className="h-6 w-6" />
+                          <div className="flex space-x-2">
+                            <span className="inline-flex items-center rounded-full bg-skyway-100 px-2.5 py-0.5 text-xs font-medium text-skyway-800">
+                              {certification.duration}
+                            </span>
+                            <span className="inline-flex items-center rounded-full bg-skyway-100 px-2.5 py-0.5 text-xs font-medium text-skyway-800">
+                              {certification.level}
+                            </span>
+                          </div>
+                        </div>
+                        <h3 className="mt-2 text-xl font-bold">{certification.title}</h3>
+                      </CardHeader>
+                      <CardContent className="p-6">
+                        <p className="text-gray-600 mb-4">{certification.description}</p>
+                        <h4 className="font-semibold text-gray-900 mb-2">What You'll Learn:</h4>
+                        <ul className="space-y-2 mb-6">
+                          {certification.features.map((feature, index) => (
+                            <li key={index} className="flex items-start">
+                              <CheckCircle className="h-4 w-4 text-skyway-600 mr-2 flex-shrink-0 mt-1" />
+                              <span className="text-sm text-gray-600">{feature}</span>
+                            </li>
+                          ))}
+                        </ul>
+                        <div className="flex gap-2">
+                          <Button asChild className="w-full">
+                            <Link href={certification.href} className="flex items-center justify-center">
+                              View Details <ArrowRight className="ml-2 h-4 w-4" />
+                            </Link>
+                          </Button>
+                          <Button asChild variant="outline" className="w-full">
+                            <Link href="/contact" className="flex items-center justify-center">
+                              Enroll Now
+                            </Link>
+                          </Button>
+                        </div>
+                      </CardContent>
+                    </Card>
+                  ))}
+                </div>
+              </div>
+            </TabsContent>
+
+            <TabsContent value="careers" className="space-y-8">
+              <div>
+                <h2 className="text-2xl font-bold text-gray-900 mb-6">Career Opportunities</h2>
+                <p className="text-gray-600 mb-8">
+                  IATA certifications open doors to a wide range of career opportunities in the aviation industry. Here
+                  are some of the career paths you can pursue with IATA certifications:
+                </p>
+
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                  {careerOpportunities.map((career, index) => (
+                    <div
+                      key={index}
+                      className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300"
+                    >
+                      <div className="h-12 w-12 rounded-full bg-skyway-100 flex items-center justify-center mb-4">
+                        <CheckCircle className="h-6 w-6 text-skyway-600" />
+                      </div>
+                      <h3 className="text-xl font-bold text-gray-900 mb-2">{career.title}</h3>
+                      <p className="text-gray-600">{career.description}</p>
+                    </div>
+                  ))}
+                </div>
+
+                <div className="mt-12">
+                  <h3 className="text-xl font-bold text-gray-900 mb-4">Industry Demand</h3>
+                  <p className="text-gray-600 mb-4">
+                    The aviation industry in the UAE and globally continues to grow, creating a high demand for
+                    qualified professionals with IATA certifications. Dubai's strategic location as a global aviation
+                    hub and the expansion of airlines and airports in the region make it an ideal place to pursue a
+                    career in aviation.
+                  </p>
+                  <p className="text-gray-600">
+                    SKYWAY Institute's IATA-certified courses are designed to meet this industry demand by providing
+                    students with the knowledge, skills, and credentials needed to succeed in the aviation industry.
+                  </p>
+                </div>
+              </div>
+            </TabsContent>
+
+            <TabsContent value="faq" className="space-y-8">
+              <div>
+                <h2 className="text-2xl font-bold text-gray-900 mb-6">Frequently Asked Questions</h2>
+                <div className="space-y-4">
+                  {[
+                    {
+                      question: "What is IATA and why are their certifications important?",
+                      answer:
+                        "IATA (International Air Transport Association) is the trade association for the world's airlines, representing some 290 airlines or 83% of total air traffic. IATA certifications are globally recognized in the aviation industry and demonstrate that you have met international standards of knowledge and competence in your field.",
+                    },
+                    {
+                      question: "Do I need prior experience in aviation to take IATA courses?",
+                      answer:
+                        "Most entry-level IATA courses do not require prior experience in aviation. These courses are designed to provide a solid foundation for those new to the industry. However, some advanced courses may have prerequisites or recommend prior knowledge or experience.",
+                    },
+                    {
+                      question: "How long are IATA courses?",
+                      answer:
+                        "The duration of IATA courses varies depending on the specific course and training format. Courses can range from a few days to several weeks. We offer flexible scheduling options, including regular weekday programs, weekend programs, and corporate training packages.",
+                    },
+                    {
+                      question: "Are IATA certifications recognized internationally?",
+                      answer:
+                        "Yes, IATA certifications are recognized globally by airlines, airports, travel agencies, freight forwarders, and other aviation-related organizations. This international recognition makes IATA certifications valuable for career advancement in the global aviation industry.",
+                    },
+                    {
+                      question: "What is the difference between IATA and ICAO courses?",
+                      answer:
+                        "IATA (International Air Transport Association) represents airlines and focuses on commercial aspects of air transport, while ICAO (International Civil Aviation Organization) is a UN specialized agency that sets standards for aviation safety, security, and efficiency. Both offer valuable certifications, with IATA courses often focusing more on commercial operations and ICAO on regulatory standards.",
+                    },
+                    {
+                      question: "How often do I need to renew my IATA certification?",
+                      answer:
+                        "The renewal requirements for IATA certifications vary depending on the specific certification. Some certifications require renewal every 1-3 years, while others may be valid for longer periods. We provide information on renewal requirements for each certification and offer recurrent training courses.",
+                    },
+                  ].map((faq, index) => (
+                    <div key={index} className="border border-gray-200 rounded-lg p-6">
+                      <h3 className="text-lg font-bold text-gray-900 mb-2">{faq.question}</h3>
+                      <p className="text-gray-600">{faq.answer}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </TabsContent>
+          </Tabs>
         </div>
       </section>
 
