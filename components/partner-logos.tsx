@@ -28,7 +28,7 @@ export default function PartnerLogos() {
     {
       id: 4,
       name: "CompTIA",
-      logo: "https://www.google.com/url?sa=i&url=https%3A%2F%2Fatlona.com%2Fcomptia-logo%2F&psig=AOvVaw06KcGknAQ4DhKtuVg-bTcR&ust=1750088134238000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCMjEyr7g840DFQAAAAAdAAAAABAE",
+      logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQw1qB6b4lEYQB3nSUm50x6ya4PchPbLrH8FvQ9qgFUurVjONiYWys2Cq6aC0h7VnlZnws&usqp=CAU",
       fallback: "CompTIA",
     },
     {
