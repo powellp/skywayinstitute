@@ -16,21 +16,21 @@ const nextConfig = {
     formats: ['image/avif', 'image/webp'],
     deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048],
     imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
-    unoptimized: true,
+    unoptimized: false, // Set to false for production
   },
   
   // Enable experimental features
   experimental: {
     // Enable server actions
-    serverActions: true,
+    serverActions: { enabled: true },
     // Enable optimistic updates
     optimisticClientCache: true,
     // Enable server components
-    serverComponentsExternalPackages: [],
+    serverExternalPackages: [],
   },
   
   // Configure headers for better security and performance
-  async headers() {
+  headers() {
     return [
       {
         source: '/(.*)',
@@ -54,6 +54,14 @@ const nextConfig = {
           {
             key: 'Referrer-Policy',
             value: 'strict-origin-when-cross-origin',
+          },
+          {
+            key: 'Content-Security-Policy',
+            value: "default-src 'self'; script-src 'self' https://cdn.example.com; img-src 'self' https://images.example.com",
+          },
+          {
+            key: 'Permissions-Policy',
+            value: 'interest-cohort=()',
           },
         ],
       },

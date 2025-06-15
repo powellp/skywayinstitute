@@ -14,7 +14,7 @@ interface Slide {
 export default function HeroCarouselClient() {
   const slides: Slide[] = [
     {
-      image: "/placeholder.svg?height=1080&width=1920",
+      image: "/public\hero-carousel-1.jpg",
       title: "Dubai's Premier Destination for Professional Growth",
       description:
         "Whether you're an individual aiming to boost your career or a company investing in workforce development, SKYWAY Institute delivers high-impact training programs tailored to your goals.",
