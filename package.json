@@ -63,10 +63,17 @@
     "zod": "^3.24.1"
   },
   "devDependencies": {
+<<<<<<< HEAD
     "@types/node": "^22.11.0",
     "@types/react": "^19.0.0",
     "@types/react-dom": "^19.0.0",
     "postcss": "^8.4.20",
+=======
+    "@types/node": "^22",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "postcss": "^8.5",
+>>>>>>> a3257e225f9eaa21d44b51052714281ed0fbd233
     "tailwindcss": "^3.4.17",
     "typescript": "^5.3.2"
   }
